@@ -1,23 +1,34 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+# Django
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
 
-# Local History for Visual Studio Code
-.history/
+# Docker
+*.env
+docker-compose.override.yml
 
-# Built Visual Studio Code Extensions
-*.vsix
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+env/
 
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
+# VSCode
+.vscode/
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
+# MacOS
+.DS_Store
+
+# Node
+node_modules/
