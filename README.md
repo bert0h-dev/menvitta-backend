@@ -29,15 +29,15 @@ Consulta ahí la guía de la API, modelos, ejemplos, y más.
 
 ## 📋 Tabla de Contenido
 
-- [Descripción](#descripción)
-- [Tech Stack](#tech-stack)
-- [Demo](#demo)
-- [Instalación](#instalación)
+- [Descripción](#-descripción)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
+- [Demo](#-demo)
+- [Instalación](#-instalación)
 - [Comandos útiles](#comandos-útiles)
-- [Contribución](#contribución)
-- [Seguridad](#seguridad)
-- [Comunidad y contacto](#comunidad-y-contacto)
-- [Licencia](#licencia)
+- [Contribución](#-contribución)
+- [Seguridad](#%EF%B8%8F-seguridad)
+- [Comunidad y contacto](##-comunidad-y-contacto)
+- [Licencia](#-licencia)
 
 ## 📄 Descripción
 
@@ -148,15 +148,15 @@ Please refer to that repository for the API guide, models, examples, and more.
 
 ## 📋 Table of Contents
 
-- [Description](#description)
-- [Tech Stack](#tech-stack-1)
-- [Demo](#demo-1)
-- [Installation](#installation)
-- [Useful Commands](#useful-commands)
-- [Contributing](#contributing)
-- [Security](#security)
-- [Community & Contact](#community--contact)
-- [License](#license)
+- [Description](#-description)
+- [Tech Stack](#%EF%B8%8F-tech-stack-1)
+- [Demo](#-demo-1)
+- [Installation](#-installation)
+- [Useful Commands](#%EF%B8%8F-useful-commands)
+- [Contributing](#-contributing)
+- [Security](#%EF%B8%8F-security)
+- [Community & Contact](#-community--contact)
+- [License](#-license)
 
 ## 📄 Description
 
