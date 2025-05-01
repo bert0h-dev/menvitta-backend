@@ -1,0 +1,56 @@
+name: 💡 Feature Request
+description: Sugiere una nueva funcionalidad o mejora para el proyecto.
+title: "[FEATURE] Breve descripción del feature"
+labels: [enhancement]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 💡 Feature Request
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: 📝 Descripción
+      description: Explica claramente **qué funcionalidad** te gustaría agregar y **por qué** es importante.
+      placeholder: Ejemplo: Me gustaría que el sistema permita exportar reportes en PDF.
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: 🎯 Objetivo
+      description: ¿Qué problema resuelve o qué mejora aporta este feature?
+      placeholder: Ejemplo: Facilitar la generación de reportes para usuarios administrativos.
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: 🖼️ Mockups / Ejemplos visuales (si aplica)
+      description: Adjunta imágenes, diagramas o ejemplos que ayuden a entender la propuesta.
+      placeholder: Puedes arrastrar y soltar archivos aquí.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 📋 Checklist
+      options:
+        - label: El feature no existe actualmente
+        - label: Es relevante para el proyecto
+        - label: Hay una descripción clara del objetivo
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 🤔 Notas adicionales
+      description: Agrega cualquier contexto extra, referencias o links útiles.
+      placeholder: Ejemplo: Referencia a un feature similar en otro sistema.
+    validations:
+      required: false

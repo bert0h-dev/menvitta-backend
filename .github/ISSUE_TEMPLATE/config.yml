@@ -1,0 +1,38 @@
+# Configuración del menú de Issues de GitHub
+blank_issues_enabled: false
+
+# Descripción personalizada que aparece arriba del selector de templates de issue
+description: |
+  👋 ¡Bienvenido! Por favor selecciona el tipo de issue que deseas crear.
+  Usa los formularios para reportar bugs, solicitar nuevas funcionalidades o mejorar la documentación.
+  Antes de abrir un issue, revisa la documentación y las preguntas frecuentes.
+  Si tienes dudas generales o necesitas ayuda, contactame usando los enlaces de abajo.
+
+  ⚠️ Para reportar vulnerabilidades de seguridad, por favor revisa nuestra política de seguridad y contáctanos de forma privada.
+
+  ---
+  🇬🇧 **English version:**
+
+  👋 Welcome! Please select the type of issue you want to create.
+  Use the forms to report bugs, request new features, or suggest documentation improvements.
+  Before opening an issue, check the documentation and FAQ.
+  If you have general questions or need help, contact me using the links below.
+
+  ⚠️ To report security vulnerabilities, please review our security policy and contact us privately.
+# Enlaces de contacto adicionales (opcional)
+contact_links:
+  - name: 📧 Email de soporte / Support Email
+    url: mailto:humberto.morales.14@hotmail.com
+    about: Envíanos un correo si tienes dudas generales o problemas fuera de los issues. / Email us if you have general questions or issues outside of GitHub.
+  - name: 💼 LinkedIn
+    url: https://www.linkedin.com/in/bert0h-dev/
+    about: Conecta conmigo en LinkedIn para networking profesional. / Connect with me on LinkedIn for professional networking.
+  - name: 📝 Guía de contribución / Contribution guide
+    url: https://github.com/bert0h-dev/menvitta-backend/blob/main/CONTRIBUTING.md
+    about: Lee las reglas y buenas prácticas antes de contribuir. / Read the rules and best practices before contributing.
+  - name: 🔒 Política de seguridad / Security Policy
+    url: https://github.com/bert0h-dev/menvitta-backend/security/policy
+    about: Reporta vulnerabilidades de forma privada y revisa nuestra política de seguridad. / Report vulnerabilities privately and review our security policy.
+  - name: 🛡️ Buenas prácticas de seguridad Django / Django security best practices
+    url: https://docs.djangoproject.com/en/stable/topics/security/
+    about: Revisa las recomendaciones oficiales de seguridad para Django. / Check Django's official security recommendations.

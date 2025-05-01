@@ -42,7 +42,10 @@ MIDDLEWARE = [
   # Middleware para permitir peticiones de backend a frontend
   "corsheaders.middleware.CorsMiddleware",
 
-  'django.middleware.common.CommonMiddleware',
+  # Para hacer traduccion de los textos
+  'django.middleware.locale.LocaleMiddleware',
+
+  'django.middleware.common.CommonMiddleware',  
   'django.middleware.csrf.CsrfViewMiddleware',
 
   # 👇 Middleware que dependan de la authentication van despues de este
@@ -52,7 +55,6 @@ MIDDLEWARE = [
   # Middleware para obtener el idioma del usuario
   # Middleware para guardar el usuario del request
   
-  'django.middleware.locale.LocaleMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -85,8 +87,8 @@ ASGI_APPLICATION = 'config.asgi.application'
 DATABASES = {}
 
 # Internationalization
-LANGUAGE_CODE = 'es-mx'
-TIME_ZONE = 'America/Mexico_City'
+LANGUAGE_CODE = 'es'
+TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

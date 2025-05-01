@@ -32,3 +32,6 @@ env/
 
 # Node
 node_modules/
+
+# codo
+.qodo/
