@@ -1,5 +1,5 @@
 name: "📝 Issue de Documentación"
-description: "Solicita la creación, mejora o corrección de documentación.""
+description: "Solicita la creación, mejora o corrección de documentación."
 title: "[DOCS] Breve descripción del tema a documentar"
 labels: ["documentation"]
 body:
