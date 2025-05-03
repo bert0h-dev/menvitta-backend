@@ -2,18 +2,15 @@ name: "🐛 Bug Report"
 description: "Reporta un bug para que pueda revisar y solucionar."
 title: "[BUG] Breve descripción del problema"
 labels: ["bug"]
-assignees: []
-
 body:
   - type: markdown
     attributes:
-      value: |
-      🐛 Bug Report
+      value: "🐛 Bug Report"
 
   - type: textarea
     id: bug-description
     attributes:
-      label: 📝 Descripción del bug
+      label: "📝 Descripción del bug"
       description: "Explica brevemente **qué está fallando**".
       placeholder: "Ejemplo: Al intentar guardar un usuario, la app muestra un error 500."
     validations:
@@ -22,7 +19,7 @@ body:
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: 🔁 Pasos para reproducir
+      label: "🔁 Pasos para reproducir"
       description: "Enumera los pasos para reproducir el bug."
       placeholder: |
         1. Ir a la página de login
@@ -34,7 +31,7 @@ body:
   - type: input
     id: environment
     attributes:
-      label: 📱 Entorno
+      label: "📱 Entorno"
       description: "Describe el sistema operativo, navegador (si aplica) y versión del proyecto."
       placeholder: "Ejemplo: Windows 11, Chrome 120, v1.2.3"
     validations:
@@ -43,7 +40,7 @@ body:
   - type: textarea
     id: evidence
     attributes:
-      label: 🖼️ Evidencia visual (screenshots, logs, etc.)
+      label: "🖼️ Evidencia visual (screenshots, logs, etc.)"
       description: "Adjunta capturas de pantalla, videos o logs relevantes."
       placeholder: "Puedes arrastrar y soltar archivos aquí."
     validations:
@@ -52,16 +49,16 @@ body:
   - type: checkboxes
     id: checklist
     attributes:
-      label: 📋 Checklist
+      label: "📋 Checklist"
       options:
-        - label: El bug no ha sido reportado antes
-        - label: Incluí pasos claros para reproducirlo
-        - label: Adjunté evidencia visual o logs
+        - label: "El bug no ha sido reportado antes"
+        - label: "Incluí pasos claros para reproducirlo"
+        - label: "Adjunté evidencia visual o logs"
 
   - type: textarea
     id: notes
     attributes:
-      label: 🤔 Notas adicionales
+      label: "🤔 Notas adicionales"
       description: "Cualquier contexto extra, hipótesis o links útiles."
       placeholder: "Ejemplo: Sospecho que el error está relacionado con la validación del backend."
     validations:
