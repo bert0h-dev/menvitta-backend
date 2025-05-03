@@ -1,17 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 📧 Email de soporte / Support Email
-    url: mailto:humberto.morales.14@hotmail.com
-    about: Envíanos un correo si tienes dudas generales o problemas fuera de los issues. / Email us if you have general questions or issues outside of GitHub.
-  - name: 💼 LinkedIn
-    url: https://www.linkedin.com/in/bert0h-dev/
-    about: Conecta conmigo en LinkedIn para networking profesional. / Connect with me on LinkedIn for professional networking.
   - name: 📝 Guía de contribución / Contribution guide
     url: https://github.com/bert0h-dev/menvitta-backend/blob/main/CONTRIBUTING.md
     about: Lee las reglas y buenas prácticas antes de contribuir. / Read the rules and best practices before contributing.
-  - name: 🔒 Política de seguridad / Security Policy
-    url: https://github.com/bert0h-dev/menvitta-backend/security/policy
-    about: Reporta vulnerabilidades de forma privada y revisa nuestra política de seguridad. / Report vulnerabilities privately and review our security policy.
-  - name: 🛡️ Buenas prácticas de seguridad Django / Django security best practices
-    url: https://docs.djangoproject.com/en/stable/topics/security/
-    about: Revisa las recomendaciones oficiales de seguridad para Django. / Check Django's official security recommendations.
