@@ -11,7 +11,7 @@ body:
     id: bug-description
     attributes:
       label: "📝 Descripción del bug"
-      description: "Explica brevemente **qué está fallando**".
+      description: "Explica brevemente **qué está fallando**."
       placeholder: "Ejemplo: Al intentar guardar un usuario, la app muestra un error 500."
     validations:
       required: true
