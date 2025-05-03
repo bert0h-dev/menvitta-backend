@@ -1,56 +1,53 @@
-name: 📝 Issue de Documentación
-description: Solicita la creación, mejora o corrección de documentación.
+name: "📝 Issue de Documentación"
+description: "Solicita la creación, mejora o corrección de documentación.""
 title: "[DOCS] Breve descripción del tema a documentar"
-labels: [documentation]
-assignees: []
-
+labels: ["documentation"]
 body:
   - type: markdown
     attributes:
-      value: |
-        # 📝 Issue de Documentación
+      value: "📝 Issue de Documentación"
 
   - type: textarea
     id: docs-topic
     attributes:
-      label: 📚 Tema a documentar
-      description: Explica **qué parte** de la documentación necesita ser creada, mejorada o corregida.
-      placeholder: Ejemplo: Falta documentar el endpoint de autenticación.
+      label: "📚 Tema a documentar"
+      description: "Explica **qué parte** de la documentación necesita ser creada, mejorada o corregida."
+      placeholder: "Ejemplo: Falta documentar el endpoint de autenticación."
     validations:
       required: true
 
   - type: textarea
     id: context
     attributes:
-      label: 📋 Contexto
-      description: ¿Por qué es importante este cambio? ¿A quién beneficia?
-      placeholder: Ejemplo: Los nuevos desarrolladores no entienden cómo usar el endpoint.
+      label: "📋 Contexto"
+      description: "¿Por qué es importante este cambio? ¿A quién beneficia?"
+      placeholder: "Ejemplo: Los nuevos desarrolladores no entienden cómo usar el endpoint."
     validations:
       required: true
 
   - type: textarea
     id: example
     attributes:
-      label: 🖼️ Ejemplo o referencia (si aplica)
-      description: Adjunta ejemplos, links o capturas de pantalla que ayuden a entender el cambio.
-      placeholder: Puedes arrastrar y soltar archivos aquí.
+      label: "🖼️ Ejemplo o referencia (si aplica)"
+      description: "Adjunta ejemplos, links o capturas de pantalla que ayuden a entender el cambio."
+      placeholder: "Puedes arrastrar y soltar archivos aquí."
     validations:
       required: false
 
   - type: checkboxes
     id: checklist
     attributes:
-      label: 📋 Checklist
+      label: "📋 Checklist"
       options:
-        - label: El tema no está documentado actualmente
-        - label: Es relevante para usuarios o desarrolladores
-        - label: Hay contexto suficiente para abordarlo
+        - label: "El tema no está documentado actualmente"
+        - label: "Es relevante para usuarios o desarrolladores"
+        - label: "Hay contexto suficiente para abordarlo"
 
   - type: textarea
     id: notes
     attributes:
-      label: 🤔 Notas adicionales
-      description: Cualquier comentario extra, links o referencias útiles.
-      placeholder: Ejemplo: Documentación oficial de Django sobre autenticación.
+      label: "🤔 Notas adicionales"
+      description: "Cualquier comentario extra, links o referencias útiles."
+      placeholder: "Ejemplo: Documentación oficial de Django sobre autenticación."
     validations:
       required: false
