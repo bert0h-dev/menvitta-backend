@@ -1,25 +1,4 @@
-# Configuración del menú de Issues de GitHub
 blank_issues_enabled: false
-
-# Descripción personalizada que aparece arriba del selector de templates de issue
-description: |
-  👋 ¡Bienvenido! Por favor selecciona el tipo de issue que deseas crear.
-  Usa los formularios para reportar bugs, solicitar nuevas funcionalidades o mejorar la documentación.
-  Antes de abrir un issue, revisa la documentación y las preguntas frecuentes.
-  Si tienes dudas generales o necesitas ayuda, contactame usando los enlaces de abajo.
-
-  ⚠️ Para reportar vulnerabilidades de seguridad, por favor revisa nuestra política de seguridad y contáctanos de forma privada.
-
-  ---
-  🇬🇧 **English version:**
-
-  👋 Welcome! Please select the type of issue you want to create.
-  Use the forms to report bugs, request new features, or suggest documentation improvements.
-  Before opening an issue, check the documentation and FAQ.
-  If you have general questions or need help, contact me using the links below.
-
-  ⚠️ To report security vulnerabilities, please review our security policy and contact us privately.
-# Enlaces de contacto adicionales (opcional)
 contact_links:
   - name: 📧 Email de soporte / Support Email
     url: mailto:humberto.morales.14@hotmail.com

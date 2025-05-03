@@ -1,14 +1,17 @@
 import os
 from pathlib import Path
 from datetime import timedelta
-
+from dotenv import load_dotenv
 # Paths
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+# Carga el archivo .env
+load_dotenv(dotenv_path=BASE_DIR / '.env')
 
 # Security
 SECRET_KEY = os.getenv('SECRET_KEY', 'unsafe-secret-key')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1").split(",")
 
 # Version de la API
 API_VERSION = "1.0.0"
@@ -42,9 +45,6 @@ MIDDLEWARE = [
   # Middleware para permitir peticiones de backend a frontend
   "corsheaders.middleware.CorsMiddleware",
 
-  # Para hacer traduccion de los textos
-  'django.middleware.locale.LocaleMiddleware',
-
   'django.middleware.common.CommonMiddleware',  
   'django.middleware.csrf.CsrfViewMiddleware',
 
@@ -52,9 +52,15 @@ MIDDLEWARE = [
   'django.contrib.auth.middleware.AuthenticationMiddleware',
 
   # Middleware para actualizar la actividad del usuario
+  'core.middleware.updateRequestInfo.UpdateUserInfoMiddleware',
   # Middleware para obtener el idioma del usuario
+  'core.middleware.setLanguage.LanguageFromUserMiddleware',
   # Middleware para guardar el usuario del request
+  'core.middleware.updateRequestInfo.ThreadLocalUserMiddleware',
   
+  # Para hacer traduccion de los textos
+  'django.middleware.locale.LocaleMiddleware',
+
   'django.contrib.messages.middleware.MessageMiddleware',
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
