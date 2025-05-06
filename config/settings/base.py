@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # Apps locales
     'core',
     'accounts',
+    'authentication',
 ]
 
 # Middleware
@@ -135,14 +136,14 @@ REST_FRAMEWORK = {
   'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
   'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
   'PAGE_SIZE': 10,
-  'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler',
+  'EXCEPTION_HANDLER': 'core.utils.handlers.custom_exception_handler',
   'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S %Z',
 }
 
 # Configuracion JWT
 SIMPLE_JWT = {
   'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
-  'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+  'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
   'ROTATE_REFRESH_TOKENS': False,
   'BLACKLIST_AFTER_ROTATION': True,
   
@@ -162,4 +163,7 @@ SPECTACULAR_SETTINGS = {
   'TITLE': 'MenVitta Backend',
   'DESCRIPTION': 'Bienvenido al backend del sistema MenVitta, una plataforma enfocada en la gestión médica de citas y pacientes.',
   'VERSION': API_VERSION,
+  'POSTPROCESSING_HOOKS': [
+    'core.base.hooks.add_default_response_envelope',
+  ],
 }
