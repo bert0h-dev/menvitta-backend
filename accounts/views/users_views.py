@@ -9,6 +9,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 from core.base.messages import get_message
 from core.base.common import GetModelName
+from core.base.pagination import BasePagination
 from core.base.serializers.responses_serializer import error_400_serializer, error_403_serializer
 from core.throttle import SensitiveActionThrottle
 from core.utils.mixins import APIResponseMixin
@@ -66,7 +67,8 @@ User = get_user_model()
 )
 class UserViewSet(APIResponseMixin, ModelViewSet):
   queryset = User.objects.all()
-  permission_classes = [IsAdmin, IsStaff]
+  permission_classes = [IsAdmin | IsStaff]
+  pagination_class = BasePagination
   filter_backends = [DjangoFilterBackend]
   filterset_class = UserFilter
 
@@ -122,7 +124,7 @@ class UserViewSet(APIResponseMixin, ModelViewSet):
   def create(self, request, *args, **kwargs):
     serializer = self.get_serializer(data=request.data)
     if serializer.is_valid():
-      instance = serializer.save()
+      serializer.save()
       return self.success_response(
         message=get_message("success", "user_create"), 
         status_code=status.HTTP_201_CREATED
@@ -177,7 +179,7 @@ class UserViewSet(APIResponseMixin, ModelViewSet):
   }
 )
 class ChangePasswordView(APIResponseMixin, APIView):
-  permission_classes = [IsAdmin, IsStaff]
+  permission_classes = [IsAdmin | IsStaff | IsUserAuthenticated]
   throttle_classes = [SensitiveActionThrottle]
 
   @LogActionView(
@@ -190,8 +192,7 @@ class ChangePasswordView(APIResponseMixin, APIView):
   )
   def put(self, request, user_id, *args, **kwargs):
     # Usa self.get_object() para obtener el usuario y aplicar permisos de DRF
-    self.kwargs['pk'] = user_id
-    target = self.get_object()
+    target = get_object_or_404(User, pk=user_id)
 
     # Inyectamos el target en el serializer
     serializer = ChangePasswordSerializer(data=request.data, context={

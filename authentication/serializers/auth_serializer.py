@@ -65,4 +65,10 @@ class RefreshTokenSerializer(Serializer):
       raise ValidationError(
         {"auth": [get_message("errors", "token_required")]}
       )
+    try:
+      RefreshToken(refresh_token)
+    except TokenError:
+      raise ValidationError(
+          {"auth": [get_message("errors", "token_invalid")]}
+      )
     return attrs

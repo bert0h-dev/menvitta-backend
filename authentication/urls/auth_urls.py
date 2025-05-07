@@ -5,5 +5,5 @@ from authentication.views.auth_views import LoginView, LogoutView, RefreshTokenV
 urlpatterns = [
   path('login/', LoginView.as_view(), name='login'),
   path('logout/', LogoutView.as_view(), name='logout'),
-  path('token/refresh/', RefreshTokenView.as_view(), name='token_refresh'),
+  path('token/refresh/', RefreshTokenView.as_view(), name='token-refresh'),
 ]

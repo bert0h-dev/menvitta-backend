@@ -40,6 +40,7 @@ def LogActionView(
             instance = response.get('log_instance')
           status_code = getattr(response, 'status_code', status.HTTP_200_OK)
         except Exception as e:
+          print("ERROR EN DECORADOR:", repr(e))
           response = None
           exception = e
           status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
@@ -62,6 +63,7 @@ def LogActionView(
             instance = response.get('log_instance')
           status_code = getattr(response, 'status_code', status.HTTP_200_OK)
         except Exception as e:
+          print("ERROR EN DECORADOR:", repr(e))
           response = None
           exception = e
           status_code = status.HTTP_500_INTERNAL_SERVER_ERROR

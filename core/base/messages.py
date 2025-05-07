@@ -26,12 +26,15 @@ MESSAGES = {
 
         # Roles
         'role_list': _("Role list."), # Lista de roles.
-        'role_details': _("Role details."), # Detalles del rol.
+        'role_recovered': _("Role successfully recovered."), # Rol recuperado correctamente.
         'role_create': _("Role created successfully."), # Rol creado exitosamente.
         'role_update': _("Role updated successfully."), # Rol actualizado exitosamente.
         'role_destroy': _("Role deleted successfully."), # Rol eliminado exitosamente.
-        'role_assign': _("Role assigned successfully."), # Rol asignado exitosamente.
+        'role_assigned': _("Role assigned successfully."), # Rol asignado exitosamente.
+        'role_removed': _("Role removed successfully."), # Rol removido exitosamente.
+
         # Permissions
+        'permissions_list': _("Permission list."), # Lista de permisos.
         'permission_assign': _("Permission assigned successfully."), # Permiso asignado exitosamente.
         # Logs
         'log_list': _("Access logs list."), # Listado de logs de acceso.
@@ -63,8 +66,12 @@ MESSAGES = {
 
         # Roles
         'role_do_exists': _("A role with this name already exists."), # Ya existe un rol con este nombre.
+        'role_empty': _("Name cannot be empty or whitespace."), # El nombre no puede ser vacio o espacios en blanco.
         'role_do_not_permissions': _("Must be a list of permission IDs."), # Debe ser una lista de IDs de permisos.
+        'role_permissions_invalid_type': _("A list of valid permission identifiers was expected."), # Se esperaba una lista de identificadores de permisos válidos.
         'role_do_assign': _("Cannot delete a role that has users assigned."), # No se puede eliminar un rol que tiene usuarios asignados.
+        'role_already_assigned': _("The user is already assigned this role."), # El usuario ya tiene asignado este rol.
+        'role_not_assigned': _("The user is not assigned this role."), # El usuario no tiene asignado este rol.
 
         # Permissions
         'permissions_list_required': _("Must provide a list of permission IDs."), # Debe enviar una lista de IDs de permisos.
@@ -88,7 +95,10 @@ MESSAGES = {
         'role_create': _("Created a new role."), # Creó un nuevo rol.
         'role_update': _("Updated role."), # Actualizó el rol.
         'role_destroy': _("Deleted role."), # Eliminó el rol.
-        'role_assign': _("Assigned role."), # Rol asignado.
+        'assign_role_to_user': _("Assigning user role."), # Asignación de rol a usuario
+        "remove_role_from_user": _("Removed user role."), # Removio rol de usuario.
+
+
         # Permissions
         'permission_assign': _("Assigned permission."), # Permiso asignado.
         # Logs
@@ -97,6 +107,9 @@ MESSAGES = {
         'log_export': _("Access logs list with export."), # Listado de logs de acceso con exportación.
     }
 }
+
+class MessageNotFoundError(Exception):
+    pass
 
 def get_message(category: str, key: str, default: str = None) -> str:
     """
@@ -116,4 +129,4 @@ def get_message(category: str, key: str, default: str = None) -> str:
         if default is not None:
             return default
         # Mensaje de error si no se encuentra la clave
-        return _("Message not found for category '%(category)s' and key '%(key)s'.") % {"category": category, "key": key}
+        raise MessageNotFoundError(f"Message not found for category `{category}` and key `{key}`.")

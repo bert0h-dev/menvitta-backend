@@ -9,6 +9,6 @@ rUsers.register(r'users', UserViewSet, basename='user')
 
 urlpatterns = [
   path('', include(rUsers.urls)),
-  path('<int:user_id>/change-password/', ChangePasswordView.as_view(), name='user_change_password'),
-  path('<int:user_id>/language/', ChangeUserLanguageView.as_view(), name='user_change_language'),
+  path('<int:user_id>/change-password/', ChangePasswordView.as_view(), name='user-change-password'),
+  path('<int:user_id>/language/', ChangeUserLanguageView.as_view(), name='user-change-language'),
 ]

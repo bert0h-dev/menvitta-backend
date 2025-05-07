@@ -110,7 +110,7 @@ LOCALE_PATHS = [
 ]
 
 # Permisos definidos por defecto
-PROJECT_PERMISSION_APPS = [
+PERMISSION_APPS_ALLOWED = [
   'auth',
   'accounts',
   'core',

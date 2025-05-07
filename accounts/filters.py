@@ -14,7 +14,7 @@ class UserFilter(django_filters.FilterSet):
   first_name = django_filters.CharFilter(field_name="first_name", lookup_expr="icontains")
   last_name = django_filters.CharFilter(field_name="last_name", lookup_expr="icontains")
   is_active = django_filters.BooleanFilter(field_name="is_active")
-  user_type = django_filters.CharFilter(field_name="user_type", choices=User.USER_TYPE_CHOICES)
+  user_type = django_filters.ChoiceFilter(field_name="user_type", choices=User.USER_TYPE_CHOICES)
 
   class Meta:
     model = User

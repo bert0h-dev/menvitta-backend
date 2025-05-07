@@ -27,6 +27,7 @@ class User(AbstractUser, PermissionsMixin):
   USER_TYPE_CHOICES = (
     ('admin', 'Administrador'),
     ('staff', 'Staff'),
+    ('user', 'Usuario')
   )
 
   # Identificacion
