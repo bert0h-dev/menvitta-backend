@@ -1,4 +1,4 @@
-from rest_framework.serializers import Serializer, ModelSerializer, EmailField, CharField, ValidationError
+from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
@@ -14,34 +14,47 @@ class LoginSerializer(TokenObtainPairSerializer):
   Serializador para login de usuario. Valida las credenciales del usuario y devuelve tokens JWT.
   """
 
-  email = EmailField()
-  password = CharField(write_only=True, style={'input_type': 'password'})
+  email = serializers.EmailField()
+  password = serializers.CharField(write_only=True, style={'input_type': 'password'})
 
   def validate(self, attrs):
     email = attrs.get('email')
     password = attrs.get('password')
     user = User.objects.filter(email=email).first()
     if user is None or not user.check_password(password):
-      raise ValidationError(
+      raise serializers.ValidationError(
         {"auth": [get_message("errors", "user_invalid_credentials")]}
       )
     return super().validate(attrs)
 
 # Serializador que regresa informacion del usuario por el Token generado
-class CurrentUserSerializer(ModelSerializer):
+class UserWithPermissionsSerializer(serializers.ModelSerializer):
+  """
+  Serializador para obtener los permisos del usuario logueado.
+  """
+  
+  permissions = serializers.SerializerMethodField()
+
   class Meta:
     model = User
-    fields = ['id', 'email', 'first_name', 'last_name', 'user_type']
+    fields = ['id', 'email', 'first_name', 'last_name', 'user_type', 'permissions']
     read_only_fields = fields
+  
+  def get_permissions(self, obj):
+    return list(obj.get_all_permissions())
 
 # Serializador de logout
-class LogoutSerializer(Serializer):
-  refresh = CharField(write_only=True)
+class LogoutSerializer(serializers.Serializer):
+  """
+  Serializador para logout del usuario.
+  """
+  
+  refresh = serializers.CharField(write_only=True)
 
   def validate(self, attrs):
     refresh_token = attrs.get('refresh')
     if not refresh_token:
-      raise ValidationError(
+      raise serializers.ValidationError(
         {"auth": [get_message("errors", "token_required")]}
       )
     try:
@@ -50,25 +63,29 @@ class LogoutSerializer(Serializer):
       if hasattr(token, 'check_blacklist'):
         token.check_blacklist()
     except TokenError:
-      raise ValidationError(
+      raise serializers.ValidationError(
         {"auth": [get_message("errors", "token_invalid")]}
       )
     return attrs
 
 # Serializador para el refresh token
-class RefreshTokenSerializer(Serializer):
-  refresh = CharField(write_only=True)
+class RefreshTokenSerializer(serializers.Serializer):
+  """
+  Serializador para refresh del token.
+  """
+  
+  refresh = serializers.CharField(write_only=True)
 
   def validate(self, attrs):
     refresh_token = attrs.get('refresh')
     if not refresh_token:
-      raise ValidationError(
+      raise serializers.ValidationError(
         {"auth": [get_message("errors", "token_required")]}
       )
     try:
       RefreshToken(refresh_token)
     except TokenError:
-      raise ValidationError(
+      raise serializers.ValidationError(
           {"auth": [get_message("errors", "token_invalid")]}
       )
     return attrs

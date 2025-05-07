@@ -17,7 +17,7 @@ from core.utils.mixins import APIResponseMixin
 from core.utils.decorators import LogActionView
 
 from authentication.serializers.auth_serializer import (
-  CurrentUserSerializer, 
+  UserWithPermissionsSerializer, 
   LoginSerializer, LogoutSerializer, 
   RefreshTokenSerializer
 )
@@ -64,7 +64,7 @@ class LoginView(APIResponseMixin, TokenObtainPairView):
     access_token = str(refresh.access_token)
     refresh_token = str(refresh)
 
-    user_data = CurrentUserSerializer(user).data
+    user_data = UserWithPermissionsSerializer(user).data
 
     data = {
       "access": access_token,

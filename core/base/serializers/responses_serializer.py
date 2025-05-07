@@ -38,7 +38,7 @@ class error_500_serializer(serializers.Serializer):
 
 # Authentications
 class login_response_serializer(serializers.Serializer):
-    from authentication.serializers.auth_serializer import CurrentUserSerializer
+    from authentication.serializers.auth_serializer import UserWithPermissionsSerializer
 
     access = serializers.CharField(
         help_text = "Token de acceso."
@@ -46,7 +46,7 @@ class login_response_serializer(serializers.Serializer):
     refresh = serializers.CharField(
         help_text = "Token de refresh."
     )
-    user = CurrentUserSerializer()
+    user = UserWithPermissionsSerializer()
 
 class refresh_response_serializer(serializers.Serializer):
     access = serializers.CharField(

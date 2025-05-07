@@ -11,7 +11,7 @@
 
 </div>
 
----
+<!-- ---
 
 ## 🇪🇸 Español | 🇬🇧 English
 
@@ -239,7 +239,7 @@ Read the [Contributing Guide](CONTRIBUTING.md) before opening a PR or issue.
 ## 🛡️ Security
 
 Found a vulnerability?  
-Please review our [Security Policy](SECURITY.md) and report it privately.
+Please review our [Security Policy](SECURITY.md) and report it privately. -->
 
 ## 🌐 Community & Contact
 
